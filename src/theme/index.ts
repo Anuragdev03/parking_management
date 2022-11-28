@@ -1,0 +1,12 @@
+
+const Theme = {
+    BACKGROUND_COLOR: "#041C32",
+    PRIMARY_FONT_COLOR: "#e8eaed",
+    SECONDARY_FONT_COLOR: "#064663",
+    TERNARY_COLOR: "#ECB365",
+
+    PRIMARY_BUTTON: "#041C32",
+    SECONDARY_BUTTON: "#1D364D"
+}
+
+export default Theme;
