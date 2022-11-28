@@ -64,7 +64,7 @@ export default function PaymentDetail(props: PropType) {
 
       navigation.push("Success", { message: "Payment Successful" });
     } catch (err) {
-      navigation.push("Warning")
+      navigation.push("Warning");
     }
   }
 
@@ -73,7 +73,9 @@ export default function PaymentDetail(props: PropType) {
     let hr = Number(parkedTime && parkedTime.split(":")[0]);
     let mm = Number(parkedTime && parkedTime.split(":")[1]);
 
-    if (hr <= 2 && mm > 1) {
+    if (hr < 2) {
+      return 10;
+    } else if (hr <= 2 && mm < 1) {
       return 10;
     } else if (hr === 2 && mm > 0) {
       return 30;
