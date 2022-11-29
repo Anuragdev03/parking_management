@@ -143,7 +143,7 @@ export default function PaymentDetail(props: PropType) {
         </View>
 
         <View style={{ position: "absolute", bottom: 20 }}>
-          <Button onPress={handleSubmit} text="COMPLETE PAYMENT" />
+          <Button onPress={handleSubmit} text="COMPLETE PAYMENT" testId="deregister-payment-button" />
         </View>
       </View>
     </SafeAreaView>
