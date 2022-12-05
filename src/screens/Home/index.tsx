@@ -29,10 +29,10 @@ export default function Home(props: PropType) {
   }, []);
 
   const availabelSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.availableSpace
+    (state: ReducerObj) => state.parkingReducer?.availableSpace
   );
   const parkingSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.parkingSpace
+    (state: ReducerObj) => state.parkingReducer?.parkingSpace
   );
 
   // Function update the parking space data in redux store
