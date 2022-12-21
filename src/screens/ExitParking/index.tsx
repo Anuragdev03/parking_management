@@ -20,13 +20,16 @@ export default function ExitParking(props: PropType) {
   let { navigation } = props;
 
   const occupiedSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.occupiedSpace
+    (state: ReducerObj) => state.parkingReducer?.occupiedSpace
   );
 
   // Render the list of parked vehicle data
   function renderList(item: OccupiedSpace, index: number) {
     return (
-      <Pressable onPress={() => navigation.push("PaymentDetail", { item })}>
+      <Pressable
+        onPress={() => navigation.push("PaymentDetail", { item })}
+        testID="parked-vehicle-number"
+      >
         <View style={style.listItem}>
           <Text style={style.listItemText}>
             {index + 1}. {item?.carRegNo}
@@ -43,7 +46,7 @@ export default function ExitParking(props: PropType) {
   // Render if data array is empty
   function emptyComponent() {
     return (
-      <View style={style.emptyComponent}>
+      <View style={style.emptyComponent} testID="empty-component">
         <Text style={{ fontStyle: "italic", fontWeight: "600" }}>
           No Data Available
         </Text>
@@ -61,6 +64,7 @@ export default function ExitParking(props: PropType) {
           keyExtractor={(item) => item?.token}
           style={style.flatList}
           ListEmptyComponent={emptyComponent}
+          testID="Parked-data-list"
         />
       </View>
     </SafeAreaView>

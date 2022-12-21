@@ -34,17 +34,17 @@ export default function NewParking(props: PropType) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-  const availabelSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.availableSpace
+  const availabelSpace: number = useSelector(
+    (state: ReducerObj) => state.parkingReducer?.availableSpace
   );
   const parkingTime = useSelector(
-    (state: ReducerObj) => state.parkingReducer.parkingTime
+    (state: ReducerObj) => state.parkingReducer?.parkingTime
   );
   const carRegNo = useSelector(
-    (state: ReducerObj) => state.parkingReducer.carRegNo
+    (state: ReducerObj) => state.parkingReducer?.carRegNo
   );
   const selectedSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.selectedSpace
+    (state: ReducerObj) => state.parkingReducer?.selectedSpace
   );
 
   function getParkingTime(time: string) {

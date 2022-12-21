@@ -2,15 +2,14 @@ import React from "react";
 import { fireEvent, screen } from "@testing-library/react-native";
 import Home from "../screens/Home";
 
-
-describe("Testing Tome screen", () => {
-    // Testing if the text field and submit button exist
+describe("Testing Home screen", () => {
+  // Testing if the text field and submit button exist
   it("renders default elements", () => {
     renderWithRedux(<Home />);
 
     const textField = screen.getByTestId("Parking-create-text-input");
     const button = screen.getByTestId("Parking-create-submit-button");
-    
+
     expect(textField).toBeTruthy();
     expect(button).toBeTruthy();
   });
@@ -28,5 +27,15 @@ describe("Testing Tome screen", () => {
 
     fireEvent.press(Button, onPressMockFn());
     expect(onPressMockFn).toHaveBeenCalled();
-  })
+  });
+
+  it("Sumbit button", () => {
+    const { getByTestId } = renderWithRedux(<Home />);
+    let Button = getByTestId("Parking-create-submit-button");
+
+    const onPress = jest.fn();
+
+    fireEvent.press(Button, onPress());
+    expect(onPress).toHaveBeenCalled();
+  });
 });

@@ -21,19 +21,19 @@ function ParkingSpace() {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const parkingSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.parkingSpace
+    (state: ReducerObj) => state.parkingReducer?.parkingSpace
   );
 
   const parkingSlotData = useSelector(
-    (state: ReducerObj) => state.parkingReducer.parkingSlotData
+    (state: ReducerObj) => state.parkingReducer?.parkingSlotData
   );
 
   const selectedSlots = useSelector(
-    (state: ReducerObj) => state.parkingReducer.selectedSpace
+    (state: ReducerObj) => state.parkingReducer?.selectedSpace
   );
 
   const occupiedIds = useSelector(
-    (state: ReducerObj) => state.parkingReducer.occupiedIds
+    (state: ReducerObj) => state.parkingReducer?.occupiedIds
   );
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function ParkingSpace() {
 
       dispatch(updateSelectedSpace(randomSlots));
     } catch (err) {
-      navigation?.push("warning")
+      navigation.navigate("warning")
     }
   }
 

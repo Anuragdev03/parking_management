@@ -46,11 +46,11 @@ export default function ParkingSlot({
           height: small ? 30 : 50,
         },
       ]}
-      testID={`parking-drawing-space-${index}`}
+      testID={`parking-drawing-space`}
     >
       <Text
         style={[style.text, { fontSize: small ? 12 : 18 }]}
-        testID={`parking-drawing-space-number-${index}`}
+        testID={`parking-drawing-space-number`}
       >
         {index}
       </Text>

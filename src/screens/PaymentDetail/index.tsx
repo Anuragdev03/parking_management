@@ -24,14 +24,14 @@ const { width, height } = Dimensions.get("window");
 export default function PaymentDetail(props: PropType) {
   let { navigation, route } = props;
   const dispatch = useDispatch();
-  let data = route.params?.item;
+  let data = route?.params?.item;
 
   const occupiedSpace = useSelector(
-    (state: ReducerObj) => state.parkingReducer.occupiedSpace
+    (state: ReducerObj) => state.parkingReducer?.occupiedSpace
   );
 
   const occupiedSpaceIds: number[] = useSelector(
-    (state: ReducerObj) => state.parkingReducer.occupiedIds
+    (state: ReducerObj) => state.parkingReducer?.occupiedIds
   );
 
   // Function handles the payment completion
@@ -64,7 +64,7 @@ export default function PaymentDetail(props: PropType) {
 
       navigation.push("Success", { message: "Payment Successful" });
     } catch (err) {
-      navigation.push("Warning");
+      navigation?.push("Warning");
     }
   }
 
