@@ -14,7 +14,7 @@ const { width, height } = Dimensions.get("window");
 
 export default function SuccessScreen(props: PropType) {
   const { navigation, route } = props;
-  let message = route.params?.message;
+  let message = route?.params?.message;
 
   return (
     <SafeAreaView style={style.container}>

@@ -1,4 +1,3 @@
-import { fireEvent, screen } from "@testing-library/react-native";
 import ArrayMethod from "../utils/array";
 import Data from "../Data/parkingSlot";
 
