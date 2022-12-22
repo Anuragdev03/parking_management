@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import { fireEvent, render } from "@testing-library/react-native";
 
 describe("Testing Button component", () => {
-  it("Testing button test renders correctly", () => {
+  it("Render test - Button", () => {
     const { getByText } = render(<Button text="Submit" />);
     expect(getByText(/submit/i)).toBeTruthy();
   });
