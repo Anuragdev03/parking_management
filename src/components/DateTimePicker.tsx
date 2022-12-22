@@ -8,33 +8,39 @@ import FormatTime from "../utils/DateTime";
 
 // Type
 interface PropType {
-  getParkingTime: (time: string) => void
+  getParkingTime: (time: string) => void;
 }
 
 export default function DateTime({ getParkingTime }: PropType) {
   const [isDatePickerVisible, setDatePickerVisibility] =
     useState<boolean>(false);
-  const [selectedTime, setSelectedTime] = useState<string | undefined>(undefined);
+  const [selectedTime, setSelectedTime] = useState<string | undefined>(
+    undefined
+  );
 
   // Hide DateTime picker
   function hideDatePicker() {
-    setDatePickerVisibility(false)
-  }  
+    setDatePickerVisibility(false);
+  }
 
   function handleConfirm(value: Date) {
-    setDatePickerVisibility(false)
-    let time = FormatTime.getTime(value)
-    
-    getParkingTime(time)
+    setDatePickerVisibility(false);
+    let time = FormatTime.getTime(value);
+
+    getParkingTime(time);
     setSelectedTime(time);
-  }  
-  
+  }
 
   return (
     <View style={style.container}>
-      <TextField onPressIn={() => setDatePickerVisibility(true)} placeholder="Parking Time" value={selectedTime} />
+      <TextField
+        onPressIn={() => setDatePickerVisibility(true)}
+        placeholder="Parking Time"
+        value={selectedTime}
+        testId="input-field"
+      />
 
-      <View style={style.dateIcon}>
+      <View style={style.dateIcon} testID="date-time-icon">
         <Image
           source={require("../assets/date-time.png")}
           style={style.timeImage}
